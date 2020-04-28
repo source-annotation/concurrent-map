@@ -485,11 +485,6 @@ func TestFnv32(t *testing.T) {
 }
 
 func TestUpsert(t *testing.T) {
-	dolphin := Animal{"dolphin"}
-	whale := Animal{"whale"}
-	tiger := Animal{"tiger"}
-	lion := Animal{"lion"}
-
 	cb := func(exists bool, valueInMap interface{}, newValue interface{}) interface{} {
 		nv := newValue.(Animal)
 		if !exists {
@@ -498,6 +493,11 @@ func TestUpsert(t *testing.T) {
 		res := valueInMap.([]Animal)
 		return append(res, nv)
 	}
+
+	dolphin := Animal{"dolphin"}
+	whale := Animal{"whale"}
+	tiger := Animal{"tiger"}
+	lion := Animal{"lion"}
 
 	m := New()
 	m.Set("marine", []Animal{dolphin})

@@ -100,6 +100,7 @@ func BenchmarkMultiInsertDifferentSyncMap(b *testing.B) {
 	}
 }
 
+// shardCount = 1 (不分片)
 func BenchmarkMultiInsertDifferent_1_Shard(b *testing.B) {
 	runWithShards(benchmarkMultiInsertDifferent, b, 1)
 }
