@@ -56,6 +56,7 @@ concurrment-map 里用到的 fnv32 是一个 non-cryptographic hash 算法，而
  
 一篇好文章 : [Cryptographic and Non-Cryptographic Hash Functions](https://dadario.com.br/cryptographic-and-non-cryptographic-hash-functions/) 
 
+一般 cryptographic hash 就是用于加密比如 sha1 等。而 non-cryptographic hash 多用于哈希映射之类的非加密场景，比如 fnv, murmurhash 等。 
 ## #5 `range-sharding` vs `hashed(key)-sharding`  
 
 concurrent-map 用的是 hash-based sharding(或 key-based sharding)，而一般还有一种 range-based sharding。
